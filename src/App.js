@@ -4,6 +4,7 @@ import MoviePreview from "./movie-preview";
 import MovieDetails from "./movie-details";
 import './App.css';
 
+const movieStyles = {backgroundColor: 'LightSkyBlue'}
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
 
 
   return (
-    <div>
+    <div style={movieStyles}>
       <h1>Movie Information</h1>
       {
         movies.map((movie) => {
@@ -29,7 +30,9 @@ function App() {
       }
     {
       movie ?
-        <MovieDetails movie={movie}/>
+        <MovieDetails 
+        movie={movie}
+        onClickFunction={setMovie}/>
         :
         <p>Choose a movie</p>
     }
